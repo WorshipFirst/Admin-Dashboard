@@ -10,6 +10,10 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AddProductComponent } from './admin/add-product/add-product.component';
 import { ViewProductComponent } from './admin/view-product/view-product.component';
+import { AddEventCategoryComponent } from './admin/add-event-category/add-event-category.component';
+import { ViewEventCategoryComponent } from './admin/view-event-category/view-event-category.component';
+import { AddEventComponent } from './admin/add-event/add-event.component';
+import { ViewEventComponent } from './admin/view-event/view-event.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +23,10 @@ import { ViewProductComponent } from './admin/view-product/view-product.componen
     ViewCategoryComponent,
     AddProductComponent,
     ViewProductComponent,
+    AddEventCategoryComponent,
+    ViewEventCategoryComponent,
+    AddEventComponent,
+    ViewEventComponent,
   ],
   imports: [
     BrowserModule,
