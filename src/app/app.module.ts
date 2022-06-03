@@ -19,6 +19,10 @@ import { ViewTempleComponent } from './admin/view-temple/view-temple.component';
 import { AddTemplePujaComponent } from './admin/add-temple-puja/add-temple-puja.component';
 import { ViewTemplePujaComponent } from './admin/view-temple-puja/view-temple-puja.component';
 
+import { AddEventCategoryComponent } from './admin/add-event-category/add-event-category.component';
+import { ViewEventCategoryComponent } from './admin/view-event-category/view-event-category.component';
+import { AddEventComponent } from './admin/add-event/add-event.component';
+import { ViewEventComponent } from './admin/view-event/view-event.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,10 @@ import { ViewTemplePujaComponent } from './admin/view-temple-puja/view-temple-pu
     AddTemplePujaComponent,
     ViewTemplePujaComponent,
    
+    AddEventCategoryComponent,
+    ViewEventCategoryComponent,
+    AddEventComponent,
+    ViewEventComponent,
   ],
   imports: [
     BrowserModule,
