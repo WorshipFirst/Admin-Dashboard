@@ -42,4 +42,67 @@ export class GeneralService {
     return this.http.post(api,formData);
   }
 
+  mediaAddCategory(formData:FormData):Observable<any>{
+    let api="http://localhost:3000/mediafile-category/add";
+    return this.http.post(api,formData);
+  }
+
+  medaiViewCategory():Observable<any>{
+   let api="http://localhost:3000/mediafile-category/view"
+    return this.http.get(api);
+  }
+
+  editMediaCategory(formData:FormData):Observable<any>{
+    let api="http://localhost:3000/mediafile-category/update";
+    return this.http.post(api,formData);
+  }
+  deleteMediaCategory(id:any):Observable<any>{
+    let api="http://localhost:3000/mediafile-category/delete/"+id;
+    return this.http.delete(api);
+  }
+
+  addMedia(formData:FormData):Observable<any>{
+    let api="http://localhost:3000/mediafile/add";
+    return this.http.post(api,formData);
+  }
+  
+  viewMedia():Observable<any>{
+    let api="http://localhost:3000/mediafile/view";
+    return this.http.get(api);
+  }
+
+  addTemple(formData:FormData):Observable<any>{
+    let api="http://localhost:3000/temple/add";
+    return this.http.post(api,formData);
+  }
+
+  viewTemple():Observable<any>{
+    let api="http://localhost:3000/temple/view";
+    return this.http.get(api);
+  }
+
+  updateTemple(formData:FormData):Observable<any>{
+    let api="http://localhost:3000/temple/update";
+    return this.http.post(api,formData);
+  }
+
+  deleteTemple(id:any):Observable<any>{
+    let api="http://localhost:3000/temple/delete/"+id;
+    return this.http.delete(api);
+  }
+
+  addTemplePuja(formData:FormData):Observable<any>{
+    let api="http://localhost:3000/templePooja/add";
+    return this.http.post(api,formData);
+  }
+
+  viewTemplePuja():Observable<any>{
+    let api="http://localhost:3000/templePooja/view";
+    return  this.http.get(api);
+  }
+
+  updateTemplePuja(formData:FormData):Observable<any>{
+    let api="http://localhost:3000/templePooja/update";
+    return this.http.post(api,formData)
+  }
 }

@@ -1,0 +1,68 @@
+<table class="table">
+    <thead>
+        <th>Sno</th>
+        <th>Image</th>
+        <th>Name</th>
+        <th>price</th>
+        <th>day</th>
+        <th>catId</th>
+        <th>Description</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let templepuja of templePujaList; index as i">
+            <td>{{i+1}}</td>
+            <td><img src="{{templepuja.image}}" style="border-radius:50%;" height="100px" width="100px" alt=""></td>
+            <td>{{templepuja.name}}</td>
+            <td>{{templepuja.price}}</td>
+            <td>{{templepuja.day}}</td>
+            <td>{{templepuja.catId.name}}</td>
+            <td>{{templepuja.description}}</td>       
+            <td><button class="btn btn-warning" (click)="takingId(templepuja._id,templepuja.name,templepuja.image,templepuja.price,templepuja.day,templepuja.description,templepuja.catId)" data-toggle="modal"
+                data-target="#myModal">Edit</button></td>
+            <!-- <td><button class="btn btn-danger" (click)="deleteCategory(medaiCategory._id,i)">Delete</button></td> -->
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <label for="">Name</label>
+                <input type="text" [(ngModel)]="name" class="form-control">
+
+                <label for="">Image</label><br>
+                <input type="file" (change)="selectImage($event)">
+
+                <label for="">Price</label>
+                <input type="number" [(ngModel)]="price" class="form-control">
+
+                <label for="">Description</label>
+                <input type="text" [(ngModel)]="description" class="form-control">
+
+                <label for="">Category</label><br>
+                <select (change)="selectTemple($event)">
+                    <option value="0">Select Temple Category</option>
+                        <option *ngFor="let cat of templeList" value="{{cat._id}}">{{cat.name}}</option>
+                </select>
+
+                <label for="">Day</label>
+                <input type="text" [(ngModel)]="day" class="form-control">
+
+                
+                <!-- <label for="">Id</label>
+                <input type="text" [(ngModel)]="id" class="form-control"> -->
+                <br>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="edit(id)">EDIT</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -35,6 +35,8 @@ export class AddProductComponent implements OnInit {
 
   selectCategory(event:any){
     this.catId = event.target.value;
+ 
+    
   }
 
   add(){

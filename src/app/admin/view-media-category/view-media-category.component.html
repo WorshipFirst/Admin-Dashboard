@@ -1,0 +1,43 @@
+<table class="table">
+    <thead>
+        <th>Sno</th>
+        <th>Image</th>
+        <th>Name</th>
+        <!-- <th>Type</th> -->
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let medaiCategory of viewMediaList;index as i">
+            <td>{{i+1}}</td>
+            <td><img src="{{medaiCategory.image}}" style="border-radius:50%;" height="100px" width="100px" alt=""></td>
+            <td>{{medaiCategory.name}}</td>
+            <td>{{medaiCategory.type}}</td>
+            <td><button class="btn btn-warning" (click)="takingId(medaiCategory._id,medaiCategory.name,medaiCategory.image)" data-toggle="modal"
+                data-target="#myModal">Edit</button></td>
+            <td><button class="btn btn-danger" (click)="deleteCategory(medaiCategory._id,i)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <label for="">Name</label>
+                <input type="text" [(ngModel)]="name" class="form-control">
+
+                <label for="">Image</label><br>
+                <input type="file" (change)="selectImage($event)">
+                <br>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editCategory(id)">EDIT</button>
+            </div>
+        </div>
+    </div>
+</div>

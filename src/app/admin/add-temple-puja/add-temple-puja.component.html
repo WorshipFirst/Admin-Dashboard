@@ -1,0 +1,40 @@
+<div class="form-group ml-5 mr-5 mt-2">
+    <label for="">Name</label><br>
+    <input type="text" class="form-control" [(ngModel)]="name">
+</div>
+<div class="form-group ml-5 mr-5 mt-2">
+    <label for="">Image</label><br>
+    <input type="file" (change)="selectImage($event)">
+</div>
+<div class="form-group ml-5 mr-5 mt-2">
+    <label for="">price</label>
+    <textarea type="number" class="form-control" [(ngModel)]="price"></textarea>
+</div>
+<div class="form-group ml-5 mr-5 mt-2">
+    <label for="">description</label><br>
+    <textarea type="text" class="form-control" [(ngModel)]="description"></textarea>
+</div>
+<div class="form-group ml-5 mr-5 mt-2">
+    <label for="">Day</label><br>
+    <textarea type="text" class="form-control" [(ngModel)]="day"></textarea>
+</div>
+<div class="form-group ml-5 mr-5 mt-2">
+    <label for="">Category</label><br>
+    <select (change)="selectCategory($event)">
+        <option value="0">Select Media Category</option>
+        <option *ngFor="let templepuja of templePujaList" value="{{templepuja._id}}">{{templepuja.name}} ({{templepuja.type}})</option>
+    </select>
+</div>
+
+<!-- <div class="form-group ml-5 mr-5 mt-2">
+    <label for="">Media Type</label><br>
+    <select (change)="selectType($event)">
+        <option value="0">Select Media Type</option>
+        <option *ngFor="let media of mediaList" value="{{media._id}}">{{media.name}} ({{media.type}})</option>
+        <option value="video">video</option>
+        <option value="audio">audio</option>
+    </select>
+</div>  -->
+<div class="form-group ml-5 mr-5 mt-2">
+    <button class="btn btn-primary" (click)="add()">Add</button>    
+</div>
