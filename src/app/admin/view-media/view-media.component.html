@@ -19,14 +19,14 @@
             <td>{{media.link}}</td>
             <!-- <td>{{media.lyrics}}</td> -->
             <td>{{media.catId.name}}</td>       
-            <!-- <td><button class="btn btn-warning" (click)="takingId(medaiCategory._id,medaiCategory.name,medaiCategory.image)" data-toggle="modal"
+            <td><button class="btn btn-warning" (click)="takingId(media._id,media.image,media.name,media.type,media.link,media.catId._id,media.catId.name)" data-toggle="modal"
                 data-target="#myModal">Edit</button></td>
-            <td><button class="btn btn-danger" (click)="deleteCategory(medaiCategory._id,i)">Delete</button></td> -->
+            <td><button class="btn btn-danger" (click)="deleteCategory(media._id,i)">Delete</button></td>
         </tr>
     </tbody>
 </table>
 
-<!-- 
+
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -39,11 +39,27 @@
 
                 <label for="">Image</label><br>
                 <input type="file" (change)="selectImage($event)">
+
+                <label for="">Type</label>
+                <input type="text" [(ngModel)]="type" class="form-control">
+
+                <label for="">Link</label>
+                <input type="text" [(ngModel)]="link" class="form-control">
+
+                <!-- <label for="">catId</label>
+                <input type="text" [(ngModel)]="catId" class="form-control"> -->
+
+                <label for="">Media</label><br>
+                <select (change)="selectMedia($event)">
+                       <option value="{{catId}}">{{catName}}</option>
+                        <option *ngFor="let cat of mediaCatList" value="{{cat._id}}">{{cat.name}}</option>
+                </select>
                 <br>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editCategory(id)">EDIT</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"   (click)="editCategory(id)">EDIT</button>
+              
             </div>
         </div>
     </div>
-</div> -->
+</div>

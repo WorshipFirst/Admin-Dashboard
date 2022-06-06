@@ -45,7 +45,7 @@ mediaList:any;
     formData.append("lyrics",this.lyrics); 
      this.service.addMedia(formData).subscribe(data=>{
       // this.mediaList=data;
-      console.log(data.result);
+      console.log(data);
       if(data){
         alert("data addedd successfully....");
       }

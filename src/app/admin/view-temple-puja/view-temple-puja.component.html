@@ -21,7 +21,7 @@
             <td>{{templepuja.description}}</td>       
             <td><button class="btn btn-warning" (click)="takingId(templepuja._id,templepuja.name,templepuja.image,templepuja.price,templepuja.day,templepuja.description,templepuja.catId)" data-toggle="modal"
                 data-target="#myModal">Edit</button></td>
-            <!-- <td><button class="btn btn-danger" (click)="deleteCategory(medaiCategory._id,i)">Delete</button></td> -->
+            <td><button class="btn btn-danger" (click)="deleteTemple(templepuja._id,i)">Delete</button></td>
         </tr>
     </tbody>
 </table>

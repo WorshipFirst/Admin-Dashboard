@@ -72,6 +72,17 @@ export class GeneralService {
     return this.http.get(api);
   }
 
+  updateMedia(formdata:FormData):Observable<any>{
+    let api="http://localhost:3000/mediafile/update";
+    return this.http.post(api,formdata);
+  }
+
+  deleteMedia(id:any):Observable<any>{
+    let api="http://localhost:3000/mediafile/delete/"+id;
+    return this.http.delete(api);
+  }
+
+
   addTemple(formData:FormData):Observable<any>{
     let api="http://localhost:3000/temple/add";
     return this.http.post(api,formData);
@@ -107,6 +118,12 @@ export class GeneralService {
     return this.http.post(api,formData)
   }
 
+  deleteTemplePuja(id:any):Observable<any>{
+    console.log('inner')
+    let api="http://localhost:3000/templePooja/delete/"+id;
+    return this.http.delete(api);
+  }
+
   addEventCategory(formdata:FormData):Observable<any>{
     let api = "http://localhost:3000/event-category/add";
     return this.http.post(api,formdata);
@@ -139,5 +156,6 @@ export class GeneralService {
     let api = "http://localhost:3000/event/update";
     return this.http.post(api,formData);
   }
+
 
 }

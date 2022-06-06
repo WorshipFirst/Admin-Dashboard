@@ -69,4 +69,19 @@ selectImage(event:any){
      })
   }
 
+  deleteTemple(id:any,i:any){
+    if(confirm("are you sure....")){
+   this.service.deleteTemplePuja(id).subscribe(data=>{
+     this.templePujaList.splice(i,1);
+  
+     if(data.result){
+       alert("deleted successfully");
+     }
+     else{
+       alert("not deleted");
+     }
+   })
+  }
+  }
+
 }
